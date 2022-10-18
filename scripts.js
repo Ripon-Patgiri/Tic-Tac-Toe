@@ -24,4 +24,10 @@ const gameBoard = () => {
     if (index > board.length) return;
     return board[index];
   };
+
+  const reset = () => {
+    for (let i = 0; i < board.length; i++) {
+      board[i] = "";
+    }
+  };
 };
