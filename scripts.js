@@ -31,3 +31,10 @@ const gameBoard = () => {
     }
   };
 };
+
+// const Board = document.getElementById("Board");
+// Board.textContent = "X";
+
+// function populateBoard(Board) {
+//     Board.textContent = "X";
+// }
