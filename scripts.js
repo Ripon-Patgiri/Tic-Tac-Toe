@@ -32,9 +32,13 @@ const gameBoard = () => {
   };
 };
 
-// const Board = document.getElementById("Board");
-// Board.textContent = "X";
-
-// function populateBoard(Board) {
-//     Board.textContent = "X";
-// }
+const blocks = document.getElementsByClassName("block");
+for (let block = 0; block < blocks.length; block++) {
+  blocks[block].addEventListener("click", (e) => {
+    if (e.target.textContent !== "") return;
+    for (let i = 0; i < blocks.length; i++) {
+      console.log("1");
+      blocks[i].textContent = "X";
+    }
+  });
+}

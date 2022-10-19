@@ -11,3 +11,7 @@ body {
     background-color: grey;
     color: wheat;
 }
+
+.block {
+    border: 1px solid red;
+}
