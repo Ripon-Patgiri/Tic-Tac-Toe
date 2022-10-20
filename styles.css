@@ -1,3 +1,12 @@
+:root {
+  --bgClr: #fefae0;
+  --fontClr: #606c38;
+  --headerBgClr: #283618;
+  --headerFontClr: #dda15e;
+  --headerFontFamily:'Fuzzy Bubbles', cursive;
+  --font: 'Quicksand', sans-serif;
+}
+
 /* CSS RESET */
 *,
 *::after,
@@ -8,10 +17,26 @@
 }
 
 body {
-    background-color: grey;
-    color: wheat;
+  background-color: var(--bgClr);
+  color: var(--fontClr);
+  font-family: var(--font);
 }
 
 .block {
-    border: 1px solid red;
+  border: 1px solid red;
+}
+
+/* HEADER */
+
+.header {
+  padding: 15px;
+  background-color: var(--headerBgClr);
+  color: var(--headerFontClr);
+  font-family: var(--headerFontFamily);
+  border: 2px solid goldenrod;
+}
+
+.title {
+  font-size: 64px;
+  text-align: center;
 }
