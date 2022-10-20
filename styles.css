@@ -3,8 +3,8 @@
   --fontClr: #606c38;
   --headerBgClr: #283618;
   --headerFontClr: #dda15e;
-  --headerFontFamily:'Fuzzy Bubbles', cursive;
-  --font: 'Quicksand', sans-serif;
+  --headerFontFamily: "Fuzzy Bubbles", cursive;
+  --font: "Quicksand", sans-serif;
 }
 
 /* CSS RESET */
@@ -22,10 +22,6 @@ body {
   font-family: var(--font);
 }
 
-.block {
-  border: 1px solid red;
-}
-
 /* HEADER */
 
 .header {
@@ -34,9 +30,30 @@ body {
   color: var(--headerFontClr);
   font-family: var(--headerFontFamily);
   border: 2px solid goldenrod;
+  margin-bottom: 20px;
 }
 
 .title {
   font-size: 64px;
   text-align: center;
+}
+
+/* BOARD */
+
+.gameBoard {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 402px;
+  height: 402px;
+  margin: 0px auto;
+}
+
+.block {
+  width: 134px;
+  height: 134px;
+  border: 2px solid var(--headerBgClr);
+  font-size: 100px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
 }
