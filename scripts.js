@@ -32,6 +32,15 @@ const gameBoard = () => {
   };
 };
 
+// Functions related to Displaying.
+const displayController = (() => {
+  // Extracting Buttons
+  const blocks;
+  const msgBtn;
+  const restartBtn;
+
+});
+
 const blocks = document.getElementsByClassName("block");
 for (let block = 0; block < blocks.length; block++) {
   blocks[block].addEventListener("click", (e) => {
