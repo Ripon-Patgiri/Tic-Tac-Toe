@@ -42,3 +42,34 @@ for (let block = 0; block < blocks.length; block++) {
     }
   });
 }
+
+// To Control the working of the game.
+const gameController = (() => {
+  const playerX = Player("X");
+  const playerO = Player("O");
+  let round = 1;
+  let isComplete = false;
+
+  const playRound = () => {
+
+  };
+
+  const getCurrentPlayerSymbol = () => {
+
+  };
+
+  const checkWinner = (fieldIndex) => {
+
+  };
+
+  const getIsComplete = () => {
+
+  };
+
+  const reset = () => {
+
+  };
+
+  return {playRound, getIsComplete, reset};
+
+})();
