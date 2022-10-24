@@ -20,6 +20,20 @@ body {
   background-color: var(--bgClr);
   color: var(--fontClr);
   font-family: var(--font);
+  line-height: 1.6;
+}
+
+h1 {
+  line-height: 1.2;
+}
+
+button {
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
 }
 
 /* HEADER */
@@ -30,11 +44,22 @@ body {
   color: var(--headerFontClr);
   font-family: var(--headerFontFamily);
   border: 2px solid goldenrod;
-  margin-bottom: 20px;
 }
 
 .title {
   font-size: 64px;
+  text-align: center;
+}
+
+/* MAIN */
+
+.main {
+  padding: 0 20px;
+}
+
+.message {
+  padding: 20px 0;
+  font-size: 42px;
   text-align: center;
 }
 
@@ -57,3 +82,35 @@ body {
   cursor: pointer;
   user-select: none;
 }
+
+.block:hover {
+  background-color: var(--headerFontClr);
+}
+
+.restart {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.restart-button {
+  padding: 10px 20px;
+  border: 3px solid var(--headerBgClr);
+  border-radius: 4px;
+  background-color: var(--headerFontClr);
+  color: var(--headerBgClr);
+  font-size: 32px;
+}
+
+.restart-button:hover {
+  background-color: var(--headerBgClr);
+  color: var(--bgClr);
+}
+
+.restart-button:active {
+  background-color: var(--headerBgClr);
+  color: var(--headerFontClr);
+}
+
+/* FOOTER */
+
