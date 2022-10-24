@@ -102,7 +102,9 @@ const gameController = (() => {
     displayController.setMessage(`Turn - ${getCurrentPlayerSymbol()}`);
   };
 
-  const getCurrentPlayerSymbol = () => {};
+  const getCurrentPlayerSymbol = () => {
+    return round % 2 === 1 ? playerX.getSymbol() : playerO.getSymbol();
+  };
 
   const checkWinner = (fieldIndex) => {};
 
