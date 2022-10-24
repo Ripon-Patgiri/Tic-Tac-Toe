@@ -35,7 +35,7 @@ const gameBoard = (() => {
 })();
 
 // Functions related to Displaying.
-const displayController = () => {
+const displayController = (() => {
   // Extracting Buttons
   const blocks = document.querySelectorAll(".block");
   const msg = document.getElementById("message");
@@ -44,14 +44,40 @@ const displayController = () => {
   //Functioning of Each Block in the Board
   blocks.forEach((block) =>
     block.addEventListener("click", (e) => {
-      if(gameController.getIsComplete() || e.target.textContent !== "") return;
+      if (gameController.getIsComplete() || e.target.textContent !== "") return;
       gameController.playRound(parseInt(e.target.dataset.index));
       updateGameBoard();
     })
+  );
 
-    
-  )
+  // Working of Restart Button
+  restartBtn.addEventListener("click", (e) => {
+    gameBoard.reset();
+    gameController.reset();
+    updateGameBoard();
+    setMessage("Turn - X");
+  });
 
+  const updateGameBoard = () => {
+    for (let i = 0; i < blocks.length; i++) {
+      blocks[i].textContent = gameBoard.getBoard(i);
+    }
+  };
+
+  const outputResult = (winner) => {
+    if (winner === "Draw") {
+      setMessage("It's a Draw!!");
+    } else {
+      setMessage(`${winner} has Won !!`);
+    }
+  };
+
+  const setMessage = (message) => {
+    msg.textContent = message;
+  };
+
+  return { outputResult, setMessage };
+})();
 
 // To Control the working of the game.
 const gameController = (() => {
