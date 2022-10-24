@@ -12,7 +12,7 @@ const Player = (symbol) => {
 };
 
 // gameBoard Object to till deal with Tic Tac Toe Board
-const gameBoard = () => {
+const gameBoard = (() => {
   const board = ["", "", "", "", "", "", "", "", ""];
 
   const setBoard = (index, symbol) => {
@@ -30,27 +30,28 @@ const gameBoard = () => {
       board[i] = "";
     }
   };
-};
+
+  return { setBoard, getBoard, reset };
+})();
 
 // Functions related to Displaying.
-const displayController = (() => {
+const displayController = () => {
   // Extracting Buttons
-  const blocks;
-  const msgBtn;
-  const restartBtn;
+  const blocks = document.querySelectorAll(".block");
+  const msg = document.getElementById("message");
+  const restartBtn = document.getElementById("restartBtn");
 
-});
+  //Functioning of Each Block in the Board
+  blocks.forEach((block) =>
+    block.addEventListener("click", (e) => {
+      if(gameController.getIsComplete() || e.target.textContent !== "") return;
+      gameController.playRound(parseInt(e.target.dataset.index));
+      updateGameBoard();
+    })
 
-const blocks = document.getElementsByClassName("block");
-for (let block = 0; block < blocks.length; block++) {
-  blocks[block].addEventListener("click", (e) => {
-    if (e.target.textContent !== "") return;
-    for (let i = 0; i < blocks.length; i++) {
-      console.log("1");
-      blocks[i].textContent = "X";
-    }
-  });
-}
+    
+  )
+
 
 // To Control the working of the game.
 const gameController = (() => {
@@ -59,26 +60,15 @@ const gameController = (() => {
   let round = 1;
   let isComplete = false;
 
-  const playRound = () => {
+  const playRound = () => {};
 
-  };
+  const getCurrentPlayerSymbol = () => {};
 
-  const getCurrentPlayerSymbol = () => {
+  const checkWinner = (fieldIndex) => {};
 
-  };
+  const getIsComplete = () => {};
 
-  const checkWinner = (fieldIndex) => {
+  const reset = () => {};
 
-  };
-
-  const getIsComplete = () => {
-
-  };
-
-  const reset = () => {
-
-  };
-
-  return {playRound, getIsComplete, reset};
-
+  return { playRound, getIsComplete, reset };
 })();
