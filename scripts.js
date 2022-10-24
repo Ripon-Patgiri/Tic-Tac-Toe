@@ -86,7 +86,21 @@ const gameController = (() => {
   let round = 1;
   let isComplete = false;
 
-  const playRound = () => {};
+  const playRound = (blockIndex) => {
+    gameBoard.setBoard(blockIndex, getCurrentPlayerSymbol());
+    if (checkWinner(blockIndex)) {
+      displayController.outputResult(getCurrentPlayerSymbol());
+      isComplete = true;
+      return;
+    }
+    if (round === 9) {
+      displayController.outputResult("Draw");
+      isComplete = true;
+      return;
+    }
+    round++;
+    displayController.setMessage(`Turn - ${getCurrentPlayerSymbol()}`);
+  };
 
   const getCurrentPlayerSymbol = () => {};
 
