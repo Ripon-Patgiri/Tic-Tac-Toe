@@ -106,7 +106,26 @@ const gameController = (() => {
     return round % 2 === 1 ? playerX.getSymbol() : playerO.getSymbol();
   };
 
-  const checkWinner = (fieldIndex) => {};
+  const checkWinner = (blockIndex) => {
+    const winConditions = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+
+    return winConditions
+      .filter((combination) => combination.includes(blockIndex))
+      .some((possibleCombination) =>
+        possibleCombination.every(
+          (index) => gameBoard.getBoard(index) === getCurrentPlayerSymbol()
+        )
+      );
+  };
 
   const getIsComplete = () => {};
 
