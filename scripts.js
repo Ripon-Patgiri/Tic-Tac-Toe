@@ -127,9 +127,14 @@ const gameController = (() => {
       );
   };
 
-  const getIsComplete = () => {};
+  const getIsComplete = () => {
+    return isComplete;
+  };
 
-  const reset = () => {};
+  const reset = () => {
+    round = 1;
+    isComplete = false;
+  };
 
   return { playRound, getIsComplete, reset };
 })();
