@@ -94,6 +94,7 @@ const gameController = (() => {
       return;
     }
     if (round === 9) {
+      console.log('running')
       displayController.outputResult("Draw");
       isComplete = true;
       return;

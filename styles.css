@@ -16,11 +16,17 @@
   box-sizing: border-box;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   background-color: var(--bgClr);
   color: var(--fontClr);
   font-family: var(--font);
   line-height: 1.6;
+  margin-bottom: 50px;
 }
 
 h1 {
@@ -67,7 +73,7 @@ button {
 
 .gameBoard {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   width: 402px;
   height: 402px;
   margin: 0px auto;
@@ -114,3 +120,49 @@ button {
 
 /* FOOTER */
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  color: var(--textClr);
+  background-color: var(--titleFooterArea);
+  border: 1px solid var(--borderClr);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.fa-github {
+  color: var(--headerBgClr);
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-linkedin {
+  color: var(--headerBgClr);
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-wordpress {
+  color: var(--headerBgClr);
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+.fa-linkedin:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+.fa-wordpress:hover {
+  transform: rotate(360deg) scale(1.2);
+}
